@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Me — My Interests & Values</title>
+  <meta name="description" content="A simple personal page about someone who loves football, reciting the Qur'an, traveling, video games, and family. Islam and its practices are central."/>
+  <style>
+    :root {
+      --bg:#0f1724; --card:#0b1220; --accent:#1e90ff; --muted:#9aa7bb; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:960px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071021 0%, #071827 50%, #081427 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      display:flex;
+      justify-content:center;
+      padding:32px 16px;
+    }
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:22px;
+    }
+    .avatar{
+      width:84px; height:84px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--accent),#7b61ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:28px;
+      color:white;
+      flex-shrink:0;
+      box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+    }
+    @media(min-width:880px){
+      .grid{grid-template-columns: 1fr 360px;}
+    }
+
+    .card{
+      background: linear-gradient(180deg,var(--card), rgba(10,18,30,0.6));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+    }
+    .section-title h2{font-size:16px;margin:0}
+    .section-title small{color:var(--muted);font-size:12px}
+
+    .interests ul{list-style:none;padding:0;margin:8px 0;display:grid;gap:10px}
+    .interest{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:10px;
+      background:var(--glass);
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .interest svg{flex-shrink:0}
+    .interest strong{display:block;font-size:15px}
+    .interest span{color:var(--muted);font-size:13px}
+
+    .values{
+      margin-top:8px;
+      padding:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .travel-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{
+      padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .family{
+      margin-top:12px;
+      font-size:15px;
+      color:#f1f6fa;
+    }
+
+    .games{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+    .game{
+      padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);
+      font-size:14px;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .cta{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;
+    }
+    .btn{
+      padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600;
+      box-shadow:0 6px 18px rgba(30,144,255,0.12);border:none;cursor:pointer;
+    }
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small profile card on right */
+    .profile{
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .stat-row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .stat{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .contact{
+      display:flex;flex-direction:column;gap:8px;margin-top:6px;
+    }
+    .contact a{color:var(--accent);text-decoration:none}
+    .quote{font-style:italic;color:var(--muted);font-size:13px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.01)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar" aria-hidden="true">Y</div>
+      <div>
+        <h1>Hello — I'm Yahee</h1>
+        <p class="lead">A person who loves football, reciting the Qur'an, traveling, video games, and family. Islam guides my life and daily practices.</p>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <!-- Left column -->
+      <section class="card">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <small>Who I am & what I love</small>
+        </div>
+
+        <p>I care deeply about faith, family, and meaningful hobbies. On any normal day you might find me:</p>
+        <ul style="margin-top:10px;color:var(--muted);">
+          <li>⚽ Practicing or watching football</li>
+          <li>📖 Reciting and reflecting on the Qur'an</li>
+          <li>✈️ Planning a future trip — I love to travel</li>
+          <li>🎮 Playing video games to relax and connect with friends</li>
+          <li>👨‍👩‍👧‍👦 Spending time with and supporting my family</li>
+        </ul>
+
+        <div style="margin-top:14px;">
+          <div class="section-title"><h2>Interests</h2><small>What I do for fun</small></div>
+          <div class="interests">
+            <ul>
+              <li class="interest">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div>
+                  <strong>Football</strong>
+                  <span>Playing, watching matches, and following favorite teams.</span>
+                </div>
+              </li>
+
+              <li class="interest">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                <div>
+                  <strong>Qur'an Recitation</strong>
+                  <span>Daily recitation, reflection, and learning tajweed where possible.</span>
+                </div>
+              </li>
+
+              <li class="interest">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+                <div>
+                  <strong>Travel</strong>
+                  <span>Exploring new places, cultures, and meeting people.</span>
+                </div>
+              </li>
+
+              <li class="interest">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                <div>
+                  <strong>Video Games</strong>
+                  <span>Casual & competitive gaming with friends — a way to relax and socialize.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="section-title"><h2>Values & Beliefs</h2><small>What I can't live without</small></div>
+          <div class="values" aria-live="polite">
+            <p><strong>Islam</strong> is central to my life. The practices I follow — prayer, reading the Qur'an, and living by Islamic values — guide my choices, shape my priorities, and give meaning to everyday life.</p>
+            <p style="margin-top:8px;color:var(--muted)">I try to balance personal goals with family responsibilities and spiritual growth.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="section-title"><h2>Family</h2><small>My support and joy</small></div>
+          <p class="family">My family is very important to me — we support each other, celebrate together, and remind each other of what matters. Family time is where I recharge.</p>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn ghost" href="#travel">Travel Plans</a>
+        </div>
+      </section>
+
+      <!-- Right column -->
+      <aside class="card profile" aria-label="Quick profile and contact">
+        <div class="section-title"><h2>Quick Stats</h2><small>Snapshot</small></div>
+        <div class="stat-row">
+          <div class="stat">
+            <strong>⚽ 5</strong>
+            <div style="color:var(--muted);font-size:13px">Years playing</div>
+          </div>
+          <div class="stat">
+            <strong>📖 Daily</strong>
+            <div style="color:var(--muted);font-size:13px">Qur'an habit</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <div class="section-title"><h2>Dream Destinations</h2><small>Places I'd love to visit</small></div>
+          <div class="travel-list" id="travel">
+            <span class="chip">Istanbul</span>
+            <span class="chip">Makkah / Madinah</span>
+            <span class="chip">Tokyo</span>
+            <span class="chip">Cappadocia</span>
+            <span class="chip">New Zealand</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="section-title"><h2>Games I Play</h2><small>Favorites</small></div>
+          <div class="games" aria-hidden="false">
+            <div class="game">FIFA / Football titles</div>
+            <div class="game">Casual & co-op games with friends</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <div class="section-title"><h2>Contact</h2><small>Get in touch</small></div>
+          <div class="contact">
+            <a href="mailto:yourname@example.com">Send an email</a>
+            <a href="#" class="btn ghost" onclick="alert('Replace with link or profile'); return false">Social / Profiles</a>
+            <div class="quote">"Faith, family, and a good match on the pitch."</div>
+          </div>
+        </div>
+
+        <footer aria-hidden="true" style="margin-top:auto">
+          <small style="color:var(--muted)">Made with care — share what you want to change.</small>
+        </footer>
+      </aside>
+    </main>
+
+    <footer style="margin-top:20px">
+      <small>© <span id="year"></span> Yahee · Built with HTML & CSS</small>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Small enhancement: smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'center'}); }
+      });
+    });
+  </script>
+</body>
+</html>
